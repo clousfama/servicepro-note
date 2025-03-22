@@ -1,0 +1,46 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Estilos globais para estabilizar a interface */
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  position: relative;
+}
+
+/* Prevenir layout shifts */
+* {
+  box-sizing: border-box;
+}
+
+/* Estabilizar altura de contêineres */
+.min-h-screen {
+  min-height: 100vh;
+  min-height: calc(var(--vh, 1vh) * 100);
+}
+
+/* Fixar posição de elementos para prevenir tremulação */
+.fixed-layout {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+  will-change: transform;
+}
+
+/* Garantir que animações não causem tremulação */
+.no-flicker {
+  transform: translateZ(0);
+}
+
+/* Forçar estabilidade de altura para divs de conteúdo */
+.stable-height {
+  height: 100%;
+  overflow: auto;
+}
